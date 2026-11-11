@@ -1,7 +1,9 @@
-const wrap = document.querySelector('#wrap')
+const wrap =document.querySelector('#wrap')
 const fixedTopBtn = document.querySelector('.fixedTop')
 
-fixedTopBtn.addEventListener('click',function(){
+console.log(wrap);
+
+fixedTopBtn.addEventListener('click',()=>{
     window.scrollTo({
         top:0,
         behavior:'smooth'
@@ -9,13 +11,15 @@ fixedTopBtn.addEventListener('click',function(){
 })
 
 
-window.addEventListener('scroll', function () {
 
+window.addEventListener('scroll',()=>{
     console.log(window.scrollY)
-    if (window.scrollY > 100) {
+    if(window.scrollY>100){
         wrap.classList.add('scroll')
-    } else {
+        
+    }else{
         wrap.classList.remove('scroll')
+
     }
 
 })
