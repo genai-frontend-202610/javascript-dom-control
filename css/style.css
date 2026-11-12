@@ -1,59 +1,88 @@
-*{
+* {
     margin: 0;
-    padding:0;
+    padding: 0;
     box-sizing: border-box;
 }
-body{
-    height: 500vh;
-}
+ul{list-style: none;}
 #wrap {
     height: 100vh;
-    background-color: #eee;
-
-}
-.fixedTop {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: salmon;
-    text-align: center;
-    align-content: center;
-    text-transform: uppercase;
-    color: #fff;
-    cursor: pointer;
-    transform: translateY(50px);
-    opacity: 0;
-    transition: all .3s;
-}
-header {
-    position: fixed;
-    /* background-color: antiquewhite; */
-    width: 100%;
-    text-align: center;
-    transition: .3s;
-    border-bottom: 1px solid transparent;
-    padding:20px 0
-}
-#wrap.scroll .fixedTop {
-    
-    opacity: 1;
-    transform: translateY(0);
-}
-#wrap.scroll header {
-    background-color: #ffffff7a;
-    backdrop-filter: blur(5px);
-    border-bottom: 1px solid #ccc;
-    box-shadow: 0 5px 5px #00000011;
-}
-section {
-    height: 100vh;
+    background: #833AB4;
+    background: linear-gradient(31deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    gap:10px
+
 }
-section h1 {
-    font-size: 100px;
+.tabs {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    gap:10px;
+    width: 100px;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+}
+.tabs li{
+    flex:1;
+    background-color: #ffffff72;
+    text-align: center;
+    align-content: center;
+    box-shadow: 0 0 5px #00000027;
+    cursor: pointer;
+    transition: all .3s;
+    color: #fff;
+}
+.tabs li span{
+    display: none;
+}
+.content-wrap {
+    width: 600px;
+    height: 400px;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 0 5px #00000027;
+    position: relative;
+}
+.content {
+    position: absolute;
+    background-color: #833AB4;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap:10px;
+    transition: all .3s;
+    opacity: 0;
+    z-index: 0;
+    
+}
+.content.on {
+    z-index: 1;
+    opacity: 1;
+}
+.content h2 {
+    font-size: 60px;
+}
+.btn {
+    display: block;
+    color:#000;
+    padding:5px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    background-color: #fff;
+}
+.tabs li.active{
+    background-color: #000;
+}
+.tabs li.active span{
+    display: block;
+    color: yellow;
+    text-transform: uppercase;
+    transition: all .3s;
 }
