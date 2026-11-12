@@ -1,88 +1,150 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1.6rem;
+    color: #333333;
+    background-color: #f5f3ff;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-ul{list-style: none;}
+
+ul {
+    list-style: none;
+}
+
 #wrap {
     height: 100vh;
-    background: #833AB4;
-    background: linear-gradient(31deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    background: #2A7B9B;
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:10px
+    gap: 10px
+}
 
+section {
+    width: 1200px;
+    margin: auto;
 }
-.tabs {
+.guide-tabs {
     display: flex;
-    flex-direction: column;
-    height: 400px;
-    gap:10px;
-    width: 100px;
-    border-radius: 10px 0 0 10px;
-    overflow: hidden;
+    gap: 0.8rem;
+    margin-bottom: 2.4rem;
 }
-.tabs li{
-    flex:1;
-    background-color: #ffffff72;
-    text-align: center;
-    align-content: center;
-    box-shadow: 0 0 5px #00000027;
+
+.guide-tabs button {
+    padding: 1rem 2.4rem;
+    border: none;
+    border-radius: 3rem;
+    background-color: #ffffff;
+    color: #5b4bd6;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: all .3s;
-    color: #fff;
+    transition: 0.3s;
 }
-.tabs li span{
-    display: none;
+
+.guide-tabs li.on button {
+    background-color: #1e1b4b;
+    color: #ffffff;
 }
-.content-wrap {
-    width: 600px;
-    height: 400px;
-    background-color: #fff;
-    overflow: hidden;
-    border-radius: 0 10px 10px 0;
-    box-shadow: 0 0 5px #00000027;
+
+.guide-content {
+    display: flex;
+    gap: 1.6rem;
+    height: 30rem;
+}
+.guide-content li {
     position: relative;
-}
-.content {
-    position: absolute;
-    background-color: #833AB4;
-    width: 100%;
-    height: 100%;
-    color: #fff;
+    flex: 1;
+    /* 기본은 4장이 같은 폭 */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap:10px;
-    transition: all .3s;
+    justify-content: flex-end;
+    gap: 1.2rem;
+    padding: 2.4rem;
+    border-radius: 1.6rem;
+    background-color: #ede9fe;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.4s, background-color 0.4s;
+}
+.guide-content .num {
+    position: absolute;
+    top: 2rem;
+    right: 2.4rem;
+    font-size: 3.2rem;
+    color: #c7c2ff;
+}
+.guide-content .badge {
+    position: absolute;
+    top: 2rem;
+    left: 2.4rem;
+    padding: 0.4rem 1.2rem;
+    border-radius: 2rem;
+    background-color: #ffd45c;
+    color: #1e1b4b;
+    font-size: 1.3rem;
+    font-weight: bold;
     opacity: 0;
-    z-index: 0;
-    
+    /* 평소엔 숨김 */
+    transform: translateY(-1rem);
+    transition: 0.4s;
 }
-.content.on {
-    z-index: 1;
+.guide-content .thumb {
+    width: auto;
+    height: auto;
+    background: none;
+    font-size: 6.4rem;
+    opacity: 0;
+    /* 평소엔 숨김 */
+    transform: scale(0.6);
+    transition: 0.4s;
+}
+.guide-content h3 {
+    font-size: 2.4rem;
+    color: #1e1b4b;
+}
+.guide-content p {
+    font-size: 1.4rem;
+    color: #5b4bd6;
+}
+
+/* 선택된 카드 (클래스 바인딩) */
+.guide-content li.on {
+    flex: 2.2;
+    /* 가로 폭 넓어짐 */
+    background-color: #1e1b4b;
+}
+
+.guide-content li.on .badge,
+.guide-content li.on .thumb {
     opacity: 1;
+    transform: none;
 }
-.content h2 {
-    font-size: 60px;
+
+.guide-content li.on h3 {
+    color: #ffffff;
 }
-.btn {
-    display: block;
-    color:#000;
-    padding:5px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    background-color: #fff;
+
+.guide-content li.on p {
+    color: #c7c2ff;
 }
-.tabs li.active{
-    background-color: #000;
-}
-.tabs li.active span{
-    display: block;
-    color: yellow;
-    text-transform: uppercase;
-    transition: all .3s;
+
+.guide-content li.on .num {
+    color: #ffd45c;
 }
