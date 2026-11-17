@@ -1,10 +1,8 @@
 const swiper = new Swiper('.gallery', {
-    navigation: {
-        nextEl: '.gallery .swiper-button-next',
-        prevEl: '.gallery .swiper-button-prev',
-    },
-    pagination: {
-        el: '.gallery .swiper-pagination',
-    },
-    loop:true
+    slidesPerView: 3,
+    // spaceBetween: 100,
+    centeredSlides: true,
+    loop: true,
+    // autoplay:true,
+    // speed:3000
 });
