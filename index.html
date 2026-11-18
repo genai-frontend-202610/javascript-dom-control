@@ -6,45 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
-    <div id="wrap">
-        <ul class="bg-wrap">
-            <li class="bg1 "></li>
-            <li class="bg2"></li>
-            <li class="bg3"></li>
-            <li class="bg4"></li>
+    <section id="s1">
+        <h1>title1</h1>
+        <ul class="list">
+            <li>list</li>
         </ul>
-        <div class="gallery-wrap">
+    </section>
+    <section id="s2">
+        <h1>title2</h1>
+        <ul class="list">
+            <li   data-aos="fade-up">list</li>
+            <li   data-aos="fade-up"   data-aos-delay="50">list</li>
+            <li   data-aos="fade-up"   data-aos-delay="100">list</li>
+            <li   data-aos="fade-up"   data-aos-delay="150">list</li>
+        </ul>
+    </section>
+    <section id="s3">
+        <h1 data-aos="fade-right">title3</h1>
+        <ul class="list">
+            <li data-aos="fade-left">list</li>
+            <li data-aos="fade-left" data-aos-delay="50">list</li>
+            <li data-aos="fade-left" data-aos-delay="100">list</li>
+            <li data-aos="fade-left" data-aos-delay="150">list</li>
+            <li data-aos="fade-left" data-aos-delay="200">list</li>
+            <li data-aos="fade-left" data-aos-delay="250">list</li>
+        </ul>
+    </section>
+    <section id="s4">
+        <h1>title4</h1>
+        <ul class="list">
+            <li data-aos="flip-right" data-aos-delay="0">list</li>
+            <li data-aos="flip-right" data-aos-delay="50">list</li>
+            <li data-aos="flip-right" data-aos-delay="100">list</li>
+        </ul>
+    </section>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-            <div class="swiper gallery">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide s01">
-                        <h2>title1</h2>
-                    </div>
-                    <div class="swiper-slide s02">
-                        <h2>title2</h2>
-                    </div>
-                    <div class="swiper-slide s03">
-                        <h2>title3</h2>
-                    </div>
-                    <div class="swiper-slide s04">
-                        <h2>title4</h2>
-                    </div>
-
-                </div>
-
-
-            </div>
-        </div>
-
-        <div class="arrow prev">prev</div>
-        <div class="arrow next">next</div>
-    </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
     <script src="./js/app.js"></script>
 </body>
 
